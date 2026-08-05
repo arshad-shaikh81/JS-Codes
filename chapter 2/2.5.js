@@ -415,5 +415,4 @@ console.log("Contains JavaScript:", hasJavaScript);
 //
 // Search Program:
 // Contains JavaScript: true
-//
 // ============================================================
