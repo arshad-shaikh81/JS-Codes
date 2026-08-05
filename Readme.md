@@ -14,6 +14,7 @@ practicals, hands-on exercises, and Namaste JavaScript code.
 | 2.1 | Functions | [View Code](./chapter%202/2.1.js) |
 | 2.2 | Arrow Functions | [View Code](./chapter%202/2.2.js) |
 | 2.3 | Arrays | [View Code](./chapter%202/2.3.js) |
+| 2.4 | Array Methods in Javascript | [View Code](./chapter%202/2.4.js) |
 
 ---
 
