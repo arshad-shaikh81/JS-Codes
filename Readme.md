@@ -7,7 +7,7 @@ practicals, hands-on exercises, and Namaste JavaScript code.
 
 ## 🗂️ Learning Index
 
-### 📘 Chapter 2 — JavaScript Fundamentals
+### 📘 Chapter 2 — Functions, Arrays & Strings 
 
 | No. | Topic | Explore |
 |-----|-------|---------|
