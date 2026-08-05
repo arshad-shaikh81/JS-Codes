@@ -65,4 +65,3 @@ This repository is created for:
 
 ---
 
-> ⭐ This repository will continue to grow as I learn and explore more JavaScript concepts.
