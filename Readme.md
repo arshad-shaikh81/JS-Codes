@@ -7,6 +7,22 @@ practicals, hands-on exercises, and Namaste JavaScript code.
 
 ## 🗂️ Learning Index
 
+### 📘 Chapter 1 — JavaScript Basics & Logic Building
+
+| No. | Topic | Explore |
+|-----|-------|---------|
+| 1.1 | Introduction to JavaScript | [View Code](./chapter%201/ch1.js) |
+| 1.2 | Output Methods | [View Code](./chapter%201/ch1.js) |
+| 1.3 | Variables (var, let, const) | [View Code](./chapter%201/ch1.js) |
+| 1.4 | Data Types | [View Code](./chapter%201/ch1.js) |
+| 1.5 | Operators | [View Code](./chapter%201/ch1.js) |
+| 1.6 | Popup Boxes | [View Code](./chapter%201/ch1.js) |
+| 1.7 | Conditional Statements | [View Code](./chapter%201/ch1.js) |
+| 1.8 | Loops | [View Code](./chapter%201/ch1.js) |
+| 1.9 | Error Handling (try, catch, throw) | [View Code](./chapter%201/ch1.js) |
+
+---
+
 ### 📘 Chapter 2 — Functions, Arrays & Strings 
 
 | No. | Topic | Explore |
