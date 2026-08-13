@@ -1,0 +1,342 @@
+JavaScript Engine EXPOSED – Google’s V8 Architecture
+
+1. Java Runtime Environment (JRE)
+
+JRE stands for Java Runtime Environment. It provides the environment
+required to run Java applications.
+
+Main components: - JVM (Java Virtual Machine) - Java Class Libraries -
+Supporting files
+
+Important: JRE is related to Java, not JavaScript. Java and JavaScript
+are different languages.
+
+------------------------------------------------------------------------
+
+2. V8 JavaScript Engine
+
+V8 is Google’s open-source JavaScript engine.
+
+It is mainly used in: - Google Chrome - Chromium - Node.js
+
+The main job of V8 is to take JavaScript code and execute it
+efficiently.
+
+Basic flow:
+
+JavaScript Code ↓ Parser ↓ AST (Abstract Syntax Tree) ↓ Bytecode /
+Ignition ↓ Execution ↓ JIT Optimization / TurboFan ↓ Machine Code
+
+------------------------------------------------------------------------
+
+3. Syntax Parser
+
+A parser checks the JavaScript code according to the language grammar.
+
+Example:
+
+    let x = 10;
+    console.log(x);
+
+The parser reads this code and identifies: - Variables - Keywords -
+Expressions - Statements - Function calls
+
+If the syntax is invalid, the parser reports a syntax error.
+
+Example:
+
+    let = 10;
+
+This code has invalid syntax.
+
+------------------------------------------------------------------------
+
+4. Abstract Syntax Tree (AST)
+
+AST stands for Abstract Syntax Tree.
+
+After parsing, JavaScript source code is converted into a tree-like
+structure called an AST.
+
+Example:
+
+    let x = 10;
+
+Conceptually:
+
+Program └── VariableDeclaration ├── Identifier: x └── Literal: 10
+
+The AST represents the structure and meaning of the source code.
+
+V8 uses this representation as part of the process of preparing
+JavaScript for execution.
+
+------------------------------------------------------------------------
+
+5. Garbage Collection
+
+JavaScript automatically manages memory.
+
+When objects are no longer reachable, JavaScript’s garbage collector can
+reclaim their memory.
+
+Example:
+
+    let user = {
+        name: "Arshad"
+    };
+
+    user = null;
+
+After user = null, the object may become unreachable if there are no
+other references to it.
+
+The garbage collector can then reclaim that memory.
+
+------------------------------------------------------------------------
+
+6. Mark and Sweep Algorithm
+
+Mark and Sweep is a garbage collection technique.
+
+It has two basic phases:
+
+Step 1 – Mark
+
+The garbage collector starts from reachable/root objects and marks
+objects that can still be reached.
+
+Example:
+
+    Root
+     ↓
+    Object A
+     ↓
+    Object B
+
+A and B are reachable, so they are marked.
+
+Step 2 – Sweep
+
+The garbage collector scans memory and removes objects that were not
+marked.
+
+    Marked object       → Keep
+    Unmarked object     → Remove
+
+Simple flow:
+
+    Reachable Objects
+           ↓
+         MARK
+           ↓
+    Unreachable Objects
+           ↓
+        SWEEP
+           ↓
+    Memory Reclaimed
+
+Real-life Example
+
+Imagine a classroom:
+
+-   Mark phase → Mark all students who are present.
+-   Sweep phase → Remove/ignore everyone who is not marked.
+
+In memory:
+
+-   Reachable object → Alive
+-   Unreachable object → Garbage
+
+------------------------------------------------------------------------
+
+7. Google V8 Engine Architecture
+
+V8 contains several important components.
+
+Main Components
+
+1. Parser
+
+Converts JavaScript source code into an internal representation and AST.
+
+2. Ignition
+
+Ignition is V8’s interpreter.
+
+It generates and executes bytecode from JavaScript code.
+
+3. TurboFan
+
+TurboFan is V8’s optimizing compiler.
+
+It identifies frequently executed code and optimizes it to improve
+performance.
+
+4. Garbage Collector
+
+V8 includes garbage collection mechanisms that automatically manage heap
+memory.
+
+5. Heap
+
+The heap is the memory area where dynamically allocated JavaScript
+objects and related data are stored.
+
+6. Call Stack
+
+The call stack keeps track of currently executing JavaScript functions.
+
+Example:
+
+    function one() {
+        two();
+    }
+
+    function two() {
+        console.log("Hello");
+    }
+
+    one();
+
+Conceptually:
+
+    Call Stack
+
+    ┌───────────────┐
+    │ console.log() │
+    ├───────────────┤
+    │ two()         │
+    ├───────────────┤
+    │ one()         │
+    └───────────────┘
+
+------------------------------------------------------------------------
+
+8. Simplified V8 Execution Flow
+
+    JavaScript Source Code
+              ↓
+            Parser
+              ↓
+             AST
+              ↓
+           Ignition
+              ↓
+           Bytecode
+              ↓
+          Execution
+              ↓
+       Frequently Used Code
+              ↓
+          TurboFan
+              ↓
+       Optimized Machine Code
+
+At the same time, V8 manages memory using the heap and garbage
+collection.
+
+------------------------------------------------------------------------
+
+9. V8 + Browser Relationship
+
+V8 is the JavaScript engine, but the browser provides many additional
+Web APIs.
+
+For example:
+
+    setTimeout(() => {
+        console.log("Hello");
+    }, 1000);
+
+The timer functionality is provided by the browser environment, not by
+the JavaScript language itself.
+
+Simplified:
+
+    Browser
+    │
+    ├── V8 JavaScript Engine
+    │   ├── Parser
+    │   ├── AST
+    │   ├── Ignition
+    │   ├── TurboFan
+    │   └── Garbage Collector
+    │
+    └── Web APIs
+        ├── setTimeout
+        ├── DOM APIs
+        ├── Fetch API
+        └── Events
+
+This is important for understanding the JavaScript Event Loop.
+
+------------------------------------------------------------------------
+
+10. Quick Revision
+
+JRE
+
+Environment used to run Java applications. It is different from
+JavaScript.
+
+V8
+
+Google’s JavaScript engine used in Chrome and Node.js.
+
+Parser
+
+Checks JavaScript syntax and helps convert source code into an internal
+representation.
+
+AST
+
+Tree-like representation of the structure of JavaScript code.
+
+Garbage Collector
+
+Automatically manages memory and reclaims memory from objects that are
+no longer reachable.
+
+Mark and Sweep
+
+-   Mark → Find reachable objects.
+-   Sweep → Remove unreachable objects.
+
+Ignition
+
+V8’s interpreter that works with bytecode.
+
+TurboFan
+
+V8’s optimizing compiler.
+
+Heap
+
+Memory area used for dynamically allocated objects.
+
+Call Stack
+
+Tracks function execution.
+
+------------------------------------------------------------------------
+
+Final Summary
+
+The JavaScript engine is responsible for executing JavaScript code.
+
+In Google’s V8:
+
+JavaScript → Parser → AST → Ignition / Bytecode → Execution → TurboFan
+optimization
+
+V8 also manages memory using the heap and garbage collection.
+
+The Mark and Sweep concept is:
+
+MARK → identify reachable objects SWEEP → remove unreachable objects
+
+So the main idea is:
+
+“V8 converts JavaScript into something the computer can execute
+efficiently, while also managing memory automatically.”
