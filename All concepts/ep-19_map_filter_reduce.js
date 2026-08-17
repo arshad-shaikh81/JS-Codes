@@ -1,59 +1,94 @@
-// What is map function
-// Definition
+// ============================================================
+// JavaScript Array Methods
+// map() | filter() | reduce()
+// ============================================================
 
-// Example
 
-const x = [1, 5, 10, 20];
+// ============================================================
+// 1. MAP FUNCTION
+// ============================================================
 
-// We want to make array like double
-// [2, 10, 20, 40]
+// Definition:
+// map() is used to transform each element of an array
+// and returns a new array.
 
-function double(x) {
-    return x * 2;
+// Example:
+
+const numbers = [1, 5, 10, 20];
+
+// We want to double every number.
+// Expected Output: [2, 10, 20, 40]
+
+function double(number) {
+    return number * 2;
 }
 
-const output = x.map(double);
+const doubledNumbers = numbers.map(double);
 
-console.log(output);
+console.log("Doubled Numbers:", doubledNumbers);
 
-// How to convert into binary
 
-function binary(x){
-    return x.toString(2);
+// ------------------------------------------------------------
+// Example 2: Convert Numbers into Binary
+// ------------------------------------------------------------
+
+function convertToBinary(number) {
+    return number.toString(2);
 }
-const B_output = x.map(binary);
 
-console.log(B_output);
+const binaryNumbers = numbers.map(convertToBinary);
 
-// What is filter function
-// Definition
+console.log("Binary Numbers:", binaryNumbers);
 
-// Example
 
-const arr = [1,2,3,4,5,6];
+// ============================================================
+// 2. FILTER FUNCTION
+// ============================================================
 
-// we want only odd numbers Ex : [1,3,5]
+// Definition:
+// filter() is used to filter elements from an array
+// based on a condition and returns a new array.
 
-function isOdd(arr){
-    return arr % 2 != 0;
+// Example 1:
+// We want only odd numbers.
+// Expected Output: [1, 3, 5]
+
+const numbersArray = [1, 2, 3, 4, 5, 6];
+
+function isOdd(number) {
+    return number % 2 !== 0;
 }
-const ans = arr.filter(isOdd);
 
-console.log(ans);
+const oddNumbers = numbersArray.filter(isOdd);
 
-// 2 Example Now we want 4 > above values
+console.log("Odd Numbers:", oddNumbers);
 
-function abv(arr){
-    return arr > 4;
+
+// ------------------------------------------------------------
+// Example 2:
+// We want numbers greater than 4.
+// Expected Output: [5, 6]
+// ------------------------------------------------------------
+
+function greaterThanFour(number) {
+    return number > 4;
 }
-const Ans = arr.filter(abv);
 
-console.log(Ans);
+const numbersAboveFour = numbersArray.filter(greaterThanFour);
 
-// what is Reduce Function
-// Definition
+console.log("Numbers Greater Than 4:", numbersAboveFour);
 
-// Ex
+
+// ============================================================
+// 3. REDUCE FUNCTION
+// ============================================================
+
+// Definition:
+// reduce() is used to reduce an array into a single value.
+
+// Example:
+// Count how many users belong to each age group.
+
 const users = [
     { firstName: "steave", lastName: "jobs", age: 26 },
     { firstName: "donald", lastName: "trump", age: 75 },
@@ -61,18 +96,72 @@ const users = [
     { firstName: "deepika", lastName: "padukone", age: 26 },
 ];
 
-// now we count age
+// Expected Output:
+// {
+//     26: 2,
+//     75: 1,
+//     50: 1
+// }
 
-// ans = {26 : 2, 75 : 1, 50 : 1}
+const ageCount = users.reduce(function (accumulator, currentUser) {
 
-const age_c = users.reduce(function (acc, curr) {
-    if (acc[curr.age]){
-        acc[curr.age] = ++acc[curr.age];
-    }else {
-        acc[curr.age] = 1;
+    if (accumulator[currentUser.age]) {
+        accumulator[currentUser.age]++;
+    } else {
+        accumulator[currentUser.age] = 1;
     }
-    return acc;
+
+    return accumulator;
+
 }, {});
-console.log(age_c);
+
+console.log("Age Count:", ageCount);
 
 
+// ============================================================
+// 4. COMBINATION OF FILTER() + MAP()
+// ============================================================
+
+// Question:
+// Find the first names of users whose age is less than 30.
+
+// Expected Output:
+// ["steave", "deepika"]
+
+const usersBelow30 = users
+    .filter(user => user.age < 30)
+    .map(user => user.firstName);
+
+console.log("Users Below 30:", usersBelow30);
+
+
+// ============================================================
+// 5. SAME QUESTION USING REDUCE()
+// ============================================================
+
+// Question:
+// Find the first names of users whose age is less than 30.
+
+// We can perform filtering and transformation
+// together using reduce().
+
+const usersBelow30UsingReduce = users.reduce(function (accumulator, currentUser) {
+
+    if (currentUser.age < 30) {
+        accumulator.push(currentUser.firstName);
+    }
+
+    return accumulator;
+
+}, []);
+
+console.log("Users Below 30 Using Reduce:", usersBelow30UsingReduce);
+
+
+// ============================================================
+// SUMMARY
+// ============================================================
+
+// map()    -> Transform every element
+// filter() -> Select elements based on a condition
+// reduce() -> Reduce an array into a single value
