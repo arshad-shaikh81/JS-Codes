@@ -1,0 +1,29 @@
+<!--Practical No 7 : Manipulate DOM elements to change background color
+using event handling.-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Change Background Color</title>
+</head>
+
+<body id="page">
+
+<h2>DOM Manipulation</h2>
+
+<p>Click the button to change the background color</p>
+
+<button id="colorBtn">Change Background Color</button>
+
+<script>
+    let button = document.getElementById("colorBtn");
+    let page = document.getElementById("page");
+
+    button.addEventListener("click", function () {
+        page.style.backgroundColor = "red";
+    });
+</script>
+
+</body>
+
+</html>

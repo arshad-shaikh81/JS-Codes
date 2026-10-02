@@ -1,0 +1,39 @@
+<!--Practical 5 : Store student marks in an array and compute the total and
+average using array operations.-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Marks</title>
+</head>
+
+<body>
+
+<h2>Student Marks</h2>
+
+<script>
+    // Creating an array of student marks
+    let marks = [75, 80, 65, 90, 85];
+
+    // Display marks
+    document.write("Marks: " + marks + "<br><br>");
+
+    // Calculate total
+    let total = 0;
+
+    for (let i = 0; i < marks.length; i++) {
+        total = total + marks[i];
+    }
+
+    // Calculate average
+    let average = total / marks.length;
+
+    // Display result
+    document.write("Total Marks = " + total + "<br>");
+    document.write("Average Marks = " + average);
+</script>
+
+</body>
+
+</html>

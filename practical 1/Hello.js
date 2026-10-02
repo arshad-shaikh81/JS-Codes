@@ -2,4 +2,5 @@
 // JavaScript file (HELLO.JS) with an HTML file
 
 // HELLO.JS - External JavaScript file
-document.write("Hello World");
+alert("Hello world!")
+console.log("Hello world!");

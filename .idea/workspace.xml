@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d585112c-d6e7-4439-8ba3-f61283ac1bca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/All concepts/ep-19_map_filter_reduce.js" beforeDir="false" afterPath="$PROJECT_DIR$/All concepts/ep-19_map_filter_reduce.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practical 1/Hello.html" beforeDir="false" afterPath="$PROJECT_DIR$/practical 1/Hello.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practical 1/Hello.js" beforeDir="false" afterPath="$PROJECT_DIR$/practical 1/Hello.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practical 2/debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/practical 2/debug.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practical 3/calc.js" beforeDir="false" afterPath="$PROJECT_DIR$/practical 3/calc.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,8 +126,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.26222.65" />
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.26222.65" />
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.27258.48" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.27258.48" />
       </set>
     </attachedChunks>
   </component>
